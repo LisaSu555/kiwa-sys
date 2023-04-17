@@ -1,4 +1,4 @@
-package com.kiwa.utils;
+package com.kiwa.config;
 
 import com.alibaba.fastjson.JSONObject;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,13 +16,13 @@ public class TokenInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        //¿çÓòÇëÇó»áÊ×ÏÈ·¢Ò»¸öoptionÇëÇó£¬Ö±½Ó·µ»ØÕý³£×´Ì¬²¢Í¨¹ýÀ¹½ØÆ÷
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ò»ï¿½ï¿½optionï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if(request.getMethod().equals("OPTIONS")){
             response.setStatus(HttpServletResponse.SC_OK);
             return true;
         }
 
-        //»ñÈ¡µ½token
+        //ï¿½ï¿½È¡ï¿½ï¿½token
         String token = request.getHeader("token");
         if (token!=null){
             boolean result= TokenUtil.verify(token);

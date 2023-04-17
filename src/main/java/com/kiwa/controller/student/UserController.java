@@ -22,4 +22,9 @@ public class UserController {
     public List<User> getAllUser(){
         return userService.getAllUser();
     }
+
+    @PostMapping("/register")
+    public String register(@RequestBody User userFromFront){
+        return userService.register(userFromFront);
+    }
 }

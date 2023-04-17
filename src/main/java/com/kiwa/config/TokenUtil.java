@@ -1,4 +1,4 @@
-package com.kiwa.utils;
+package com.kiwa.config;
 
 import com.kiwa.domain.User;
 import com.auth0.jwt.JWT;

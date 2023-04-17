@@ -1,4 +1,4 @@
-package com.kiwa.utils;
+package com.kiwa.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

@@ -7,4 +7,5 @@ import java.util.List;
 public interface IUserService {
     LoginDto login(User user);
     List<User> getAllUser();
+    String register(User userFromFront);
 }
