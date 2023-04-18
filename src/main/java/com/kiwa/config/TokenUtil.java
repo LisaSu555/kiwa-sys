@@ -10,10 +10,6 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import java.util.Date;
 
-/**
- * @author laz
- * @date 2022/09/09 14:55
- */
 public class TokenUtil {
     
     //token到期时间60s
@@ -54,7 +50,7 @@ public class TokenUtil {
             //创建token验证器
             JWTVerifier jwtVerifier=JWT.require(Algorithm.HMAC256(TOKEN_SECRET)).withIssuer("auth0").build();
             DecodedJWT decodedJWT=jwtVerifier.verify(token);
-            System.out.println("auth pass!：");
+            System.out.println("auth pass!");
             System.out.println("username: " + TokenUtil.getUserName(token));
             System.out.println("expires time ：    " + decodedJWT.getExpiresAt());
         } catch (IllegalArgumentException |JWTVerificationException e) {

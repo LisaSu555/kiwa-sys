@@ -6,23 +6,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-/**
- * @author laz
- * @date 2022/09/09 14:56
- */
 @Component
 public class TokenInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        //������������ȷ�һ��option����ֱ�ӷ�������״̬��ͨ��������
         if(request.getMethod().equals("OPTIONS")){
             response.setStatus(HttpServletResponse.SC_OK);
             return true;
         }
 
-        //��ȡ��token
         String token = request.getHeader("token");
         if (token!=null){
             boolean result= TokenUtil.verify(token);
