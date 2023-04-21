@@ -72,4 +72,10 @@ public class TokenUtil {
             return null;
         }
     }
+
+    public static User getCurrentUserByToken(String token){
+        User user = new User();
+        user.setUsername(getUserName(token));
+        return user;
+    }
 }
