@@ -1,0 +1,14 @@
+.text{
+    width: 100px;
+    height: 10px;
+    position: relative;
+    left: 80%;
+    top: 70px;
+}
+.btn_lgo{
+    width: 100px;
+    height: 10px;
+    position: relative;
+    left: 90%;
+    bottom: 22px;
+}

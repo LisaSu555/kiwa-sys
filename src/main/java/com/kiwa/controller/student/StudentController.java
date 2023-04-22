@@ -1,7 +1,7 @@
 package com.kiwa.controller.student;
 
+import com.kiwa.controller.BaseController;
 import com.kiwa.domain.User;
-import com.kiwa.utils.system.GetCurrentUser;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/student")
-public class StudentController {
+public class StudentController extends BaseController {
 
     /**
      *
@@ -27,7 +27,7 @@ public class StudentController {
      */
     @GetMapping("/loginUser")
     public String user(HttpServletRequest request) {
-        User currentUser = GetCurrentUser.getCurrentUser(request);
+        User currentUser = getCurrentUser(request);
         return currentUser.getUsername();
     }
 }

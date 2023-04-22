@@ -1,4 +1,4 @@
-package com.kiwa.controller.student;
+package com.kiwa.controller;
 
 import com.kiwa.domain.User;
 import com.kiwa.domain.VO.LoginDto;
