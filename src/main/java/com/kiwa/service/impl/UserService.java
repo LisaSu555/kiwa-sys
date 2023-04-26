@@ -1,5 +1,6 @@
 package com.kiwa.service.impl;
 
+import com.kiwa.domain.BO.UserBo;
 import com.kiwa.domain.User;
 import com.kiwa.domain.VO.LoginDto;
 import com.kiwa.mapper.UserMapper;
@@ -22,6 +23,7 @@ public class UserService implements IUserService {
         if (login == null){
             loginDto.setCode("400");
             loginDto.setMsg("username or password is wrong！");
+            UserBo.setUser(user);
             return loginDto;
         }
         String token= TokenUtil.sign(login);
@@ -33,6 +35,7 @@ public class UserService implements IUserService {
         return loginDto;
     }
     public List<User> getAllUser() {
+        System.out.println("current login user is "+UserBo.getUser().getUsername());
         return userMapper.getAllUser();
     }
 

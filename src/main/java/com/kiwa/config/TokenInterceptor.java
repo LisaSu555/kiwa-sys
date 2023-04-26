@@ -1,6 +1,10 @@
 package com.kiwa.config;
 
 import com.alibaba.fastjson.JSONObject;
+import com.kiwa.controller.BaseController;
+import com.kiwa.domain.BO.BaseUserInfo;
+import com.kiwa.domain.Enum.UserInfoEnu;
+import com.kiwa.domain.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
@@ -21,6 +25,8 @@ public class TokenInterceptor implements HandlerInterceptor {
         if (token!=null){
             boolean result= TokenUtil.verify(token);
             if (result){
+                User user = TokenUtil.getCurrentUserByToken(token);
+                BaseUserInfo.set(UserInfoEnu.user.getCode(), user.getUsername());
                 System.out.println("you are already login pass!");
                 return true;
             }

@@ -1,6 +1,8 @@
 package com.kiwa.controller.student;
 
 import com.kiwa.controller.BaseController;
+import com.kiwa.domain.BO.BaseUserInfo;
+import com.kiwa.domain.Enum.UserInfoEnu;
 import com.kiwa.domain.User;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,9 +27,8 @@ public class StudentController extends BaseController {
      * 得到当前登录用户的测试
      * @return 用户对象的名字
      */
-    @GetMapping("/loginUser")
-    public String user(HttpServletRequest request) {
-        User currentUser = getCurrentUser(request);
-        return currentUser.getUsername();
+    @GetMapping("/getStudent")
+    public String user() {
+        return BaseUserInfo.get(UserInfoEnu.user.getCode());
     }
 }
