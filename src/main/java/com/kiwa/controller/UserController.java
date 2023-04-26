@@ -4,27 +4,36 @@ import com.kiwa.domain.User;
 import com.kiwa.domain.VO.LoginDto;
 import com.kiwa.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/login")
+    @ResponseBody
+    @PostMapping("/authLogin")
     public LoginDto login(@RequestBody User user){
         return userService.login(user);
     }
 
+    @ResponseBody
     @GetMapping("/list")
     public List<User> getAllUser(){
         return userService.getAllUser();
     }
 
-    @PostMapping("/register")
+    @ResponseBody
+    @PostMapping("/authRegister")
     public String register(@RequestBody User userFromFront){
         return userService.register(userFromFront);
+    }
+
+    @RequestMapping("/login")
+    public String loginPage(){
+        return "system/login";
     }
 }

@@ -23,6 +23,7 @@ public class WebConfiguration implements WebMvcConfigurer {
         List<String> excludePath = new ArrayList<>();
         //排除拦截，除了登录，其他都拦截
         excludePath.add("/user/login");
+        excludePath.add("/user/authLogin");
         registry.addInterceptor(tokenInterceptor)
                 .addPathPatterns("/**")
                 .excludePathPatterns(excludePath);
