@@ -3,7 +3,7 @@ package com.kiwa.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-public class R {
+public class Result {
     private static final HashMap<String, Object> map = new HashMap<String, Object>();
 
     public static Map<String, Object> succeed(String msg) {
