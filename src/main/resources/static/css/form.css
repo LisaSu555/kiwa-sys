@@ -1,0 +1,41 @@
+body{font-size: 12px; font-family: "宋体";}
+body,form,input,p{padding: 0; margin: 0;border: 0;}
+form{
+    width: 320px;
+    height: 150px;
+    padding-top: 20px;
+    margin: 50px auto;
+    background: #f5f6fd;
+    border-radius: 20px;
+    border: 3px solid #4faccd;
+}
+p{margin-top: 17px; text-align: center;}
+p span{
+    width: 40px;
+    display: inline-block;
+    text-align: right;
+}
+.num,.pass{
+    width: 153px;
+    height: 16px;
+    border:2px solid #35a1df;
+    /* 22px:给图标留出位置 */
+    padding: 2px 2px 2px 22px  ;
+}
+.num{
+    background-size: 15px;
+    color: #999;
+}
+.pass{
+    background-size: 15px;
+
+}
+.btn01,.btn02{
+    width: 60px;
+    height: 26px;
+    border-radius: 3px;
+    border: 2px solid #6b5b60;
+    margin-left:30px ;
+}
+.btn01{background: #3bb7ea;}
+.btn02{background: #fbbc18;}

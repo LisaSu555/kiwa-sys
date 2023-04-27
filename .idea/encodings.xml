@@ -19,6 +19,6 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/static/user" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/templates/price/footer.html" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/templates/price/header.html" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/templates/price/index.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/templates/price/priceList.html" charset="GBK" />
   </component>
 </project>

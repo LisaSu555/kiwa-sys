@@ -388,15 +388,46 @@
 <script>
     /*发起登录验证请求*/
     function loginAuth() {
-        const name = $("#loginName").val();
-        const password = $("#loginPass").val();
-
+        const person = {};
+        person.username = $('#loginName').val();
+        person.password = $('#loginPass').val();
         $.ajax({
             url:"/user/authLogin",    //请求的url地址
             dataType:"json",   //返回格式为json
+            contentType:'application/json;charset=UTF-8',
             async:true,//请求是否异步，默认为异步，这也是ajax重要特性
-            data:{"username":name,"password":password},    //参数值
+            data:JSON.stringify(person),    //参数值
             type:"POST",   //请求方式
+            beforeSend:function(){
+                //请求前的处理
+            },
+            success:function(req){
+                //请求成功时处理
+                const token = req.token;
+                toIndexPage(token);
+            },
+            complete:function(){
+                //请求完成的处理
+            },
+            error:function(r){
+                //请求出错处理
+                console.log("请求错了");
+                console.log(r);
+            }
+        });
+    }
+
+    function toIndexPage(token){
+        $.ajax({
+            url:"/price/getList2",    //请求的url地址
+            dataType:"json",   //返回格式为json
+            contentType:'application/json;charset=UTF-8',
+            headers: {      //请求头
+                Accept: "application/json; charset=utf-8",
+                token: "" + token  //这是获取的token
+            },
+            async:false,//请求是否异步，默认为异步，这也是ajax重要特性
+            type:"GET",   //请求方式
             beforeSend:function(){
                 //请求前的处理
             },
@@ -409,6 +440,7 @@
             },
             error:function(r){
                 //请求出错处理
+                console.log("请求错了");
                 console.log(r);
             }
         });
