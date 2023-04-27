@@ -32,6 +32,6 @@ public class PriceController {
     public String getPriceList(ModelMap modelMap){
         List<PriceVO> list = priceService.getPriceList();
         modelMap.addAttribute("data",list);
-        return "/price/priceList";
+        return "price/priceList";
     }
 }
