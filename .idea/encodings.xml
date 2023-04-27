@@ -4,7 +4,14 @@
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/static/css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/img/01-man.jpeg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/img/02-man.jpeg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/img/03-man.jpeg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/img/04-man.jpeg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/img/1.svg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/img/2.svg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/static/img/bg.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/img/showcase.svg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/static/js" charset="GBK" />
   </component>
 </project>
