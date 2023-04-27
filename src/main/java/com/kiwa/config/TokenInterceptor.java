@@ -36,7 +36,7 @@ public class TokenInterceptor implements HandlerInterceptor {
             json.put("code","400");
             json.put("msg","you should login first");
             response.getWriter().append(json.toString());
-            response.sendRedirect("/user/login");
+            //response.sendRedirect("/user/login");
             System.out.println("you should login first");
         } catch (Exception e) {
             return false;
