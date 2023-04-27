@@ -404,7 +404,13 @@
             success:function(req){
                 //请求成功时处理
                 const token = req.token;
-                toIndexPage(token);
+                const url = "/price/getList2";
+                const headers = new Headers();
+                headers.append('Authorization',token);
+                fetch(url,{
+                    method:'GET',
+                    headers
+                })
             },
             complete:function(){
                 //请求完成的处理
@@ -444,6 +450,15 @@
                 console.log(r);
             }
         });
+    }
+
+    function priceListPage(url,token){
+        const xhr = new XMLHttpRequest();
+        xhr.open("get", url, true); // get、post都可
+        xhr.responseType = "blob";  // 转换流
+        xhr.setRequestHeader("Authorization", token); // token键值对
+        window.URL.revokeObjectURL(url)
+        xhr.send();
     }
 </script>
 </html>
