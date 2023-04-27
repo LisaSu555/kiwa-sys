@@ -8,9 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+/**
+ * @author hp
+ */
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController{
     @Autowired
     private UserService userService;
 

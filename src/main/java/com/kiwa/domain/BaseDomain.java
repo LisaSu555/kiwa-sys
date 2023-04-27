@@ -1,15 +1,14 @@
-package com.kiwa.controller;
+package com.kiwa.domain;
 
 import lombok.Data;
 
 import java.util.Date;
 
 /**
- * 公共的属性和方法
- * @author hp
+ * @author
  */
 @Data
-public class BaseController {
+public class BaseDomain {
     private Integer createBy;
     private Date createDate;
     private Date updateDate;
