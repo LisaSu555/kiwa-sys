@@ -34,9 +34,4 @@ public class UserController extends BaseController{
     public String register(@RequestBody User userFromFront){
         return userService.register(userFromFront);
     }
-
-    @RequestMapping("/login")
-    public String loginPage(){
-        return "system/login";
-    }
 }
