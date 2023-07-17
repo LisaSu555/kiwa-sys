@@ -5,7 +5,6 @@ import com.kiwa.service.PriceService;
 import com.kiwa.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -26,11 +25,5 @@ public class PriceController {
     public Map<String,Object> getPriceListPage(){
         List<PriceVO> list = priceService.getPriceList();
         return Result.succeed(0,"查询成功",list);
-    }
-
-    @RequestMapping("/getList2")
-    public String getPriceList(Model model){
-        model.addAttribute("test","test001");
-        return "price/priceList";
     }
 }

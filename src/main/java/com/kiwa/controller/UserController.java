@@ -5,6 +5,7 @@ import com.kiwa.domain.VO.LoginDto;
 import com.kiwa.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -17,10 +18,12 @@ public class UserController extends BaseController{
     @Autowired
     private UserService userService;
 
-    @ResponseBody
+    //@ResponseBody
     @PostMapping("/authLogin")
-    public LoginDto login(@RequestBody User user){
-        return userService.login(user);
+    public String login(@RequestBody User user, Model model){
+        LoginDto login = userService.login(user);
+        model.addAttribute("user",login);
+        return "redirect:price/priceList";
     }
 
     @ResponseBody
