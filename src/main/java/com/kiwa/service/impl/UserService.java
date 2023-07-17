@@ -25,12 +25,10 @@ public class UserService implements IUserService {
             UserBo.setUser(user);
             return loginDto;
         }
-        String token= TokenUtil.sign(login);
 
         loginDto.setCode("200");
         loginDto.setMsg("login success!");
         loginDto.setUser(login);
-        loginDto.setToken(token);
         return loginDto;
     }
     public List<User> getAllUser() {

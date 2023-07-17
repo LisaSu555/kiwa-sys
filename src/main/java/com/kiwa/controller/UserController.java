@@ -18,6 +18,11 @@ public class UserController extends BaseController{
     @Autowired
     private UserService userService;
 
+    @RequestMapping("/login")
+    public String loginPage(){
+        return "system/login3";
+    }
+
     //@ResponseBody
     @PostMapping("/authLogin")
     public String login(@RequestBody User user, Model model){
